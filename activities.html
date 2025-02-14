@@ -7,71 +7,64 @@
     <link rel="stylesheet" href="css/activities.css" />
   </head>
   <body>
-    <div id="activityquestion"><b>What are we doing after?</b></div>
+    <div id="activityquestion"><b>Where are we going?</b></div>
     <div class="activities-selection">
       <div class="activity-item">
-        <img src="activities/aquarium.jpeg" alt="aquarium" />
-        <label
-          ><input
-            type="checkbox"
-            name="activities"
-            value="aquarium"
-          />aquarium</label
-        >
+        <img src="activities/bharat-text-2025.jpeg" alt="bharat-text" />
+        <label>
+          <input type="checkbox" name="activities" value="bharat-text" />
+          Bharat Text 2025
+        </label>
       </div>
       <div class="activity-item">
-        <img src="activities/arcade.jpeg" alt="arcade" />
-        <label
-          ><input
-            type="checkbox"
-            name="activities"
-            value="arcade"
-          />arcade</label
-        >
+        <img src="activities/bikaner-house.jpg" alt="bikaner-house" />
+        <label>
+          <input type="checkbox" name="activities" value="bikaner-house" />
+          Bikaner House
+        </label>
       </div>
       <div class="activity-item">
-        <img src="activities/cinema.jpeg" alt="cinema" />
-        <label
-          ><input
-            type="checkbox"
-            name="activities"
-            value="cinema"
-          />cinema</label
-        >
+        <img src="activities/cafe.jpg" alt="cafe" />
+        <label>
+          <input type="checkbox" name="activities" value="cafe" />
+          Cafe
+        </label>
       </div>
       <div class="activity-item">
-        <img src="activities/keramika.jpeg" alt="ceramics" />
-        <label
-          ><input
-            type="checkbox"
-            name="activities"
-            value="ceramics"
-          />ceramics</label
-        >
+        <img src="activities/cinema.jpg" alt="cinema" />
+        <label>
+          <input type="checkbox" name="activities" value="cinema" />
+          Cinema
+        </label>
       </div>
       <div class="activity-item">
-        <img src="activities/kunsthalle.jpeg" alt="kunsthalle" />
-        <label
-          ><input
-            type="checkbox"
-            name="activities"
-            value="kunsthalle"
-          />exhibition</label
-        >
-      </div>
-      <div class="activity-item">
-        <img src="activities/park.jpeg" alt="park.jpeg" />
-        <label
-          ><input
-            type="checkbox"
-            name="activities"
-            value="park.jpeg"
-          />park</label
-        >
+        <img src="activities/co-working-space.jpg" alt="co-working-space" />
+        <label>
+          <input type="checkbox" name="activities" value="co-working-space" />
+          Co-working Space
+        </label>
       </div>
     </div>
-    <button class="button" onclick="location.href='lastpage.html'">
-      Last page ... 
+    <button class="button" onclick="saveSelectionsAndRedirect()">
+      Last page ...
     </button>
+
+    <script>
+      function saveSelectionsAndRedirect() {
+        const checkboxes = document.querySelectorAll(
+          'input[name="activities"]:checked'
+        );
+        const selectedActivities = Array.from(checkboxes).map(
+          (checkbox) => checkbox.value
+        );
+        // Save selections in localStorage
+        localStorage.setItem(
+          "selectedActivities",
+          JSON.stringify(selectedActivities)
+        );
+        // Redirect to the last page
+        window.location.href = "lastpage.html";
+      }
+    </script>
   </body>
 </html>
