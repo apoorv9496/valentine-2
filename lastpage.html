@@ -49,19 +49,21 @@
     </div> -->
 
     <!-- WhatsApp Button -->
-    <button id="whatsapp-button" class="button">Click here buddhu...</button>
+    <button id="whatsapp-button" class="button">Talk to me buddhu...</button>
 
     <script>
       // Retrieve selected activities from localStorage
       const selectedActivities =
         JSON.parse(localStorage.getItem("selectedActivities")) || [];
+      const selectedDate =
+        localStorage.getItem("selectedDate") || "No date selected";
 
       // Create WhatsApp message and link
       const whatsappButton = document.getElementById("whatsapp-button");
       whatsappButton.addEventListener("click", () => {
-        const message = `Hi Veenu! Plan a day for me and Gunnu, here's my preference:\n\n${selectedActivities.join(
+        const message = `Hi Veenu! Plan the day for me and Gunnu, here's my preference:\n\n${selectedActivities.join(
           ", "
-        )}\n\nSo excited! <3`;
+        )}\non ${selectedDate}\n\nSo excited! <3`;
 
         const whatsappNumber = "9958034627";
         const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(

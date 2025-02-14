@@ -8,14 +8,27 @@
   </head>
   <body>
     <h1 title="choose a date">When are you free...</h1>
-    <form class="form-group">
+    <form class="form-group" onsubmit="saveDate(event)">
       <label>Select a date cutu...(pliss avoid 15 & 16)</label>
       <div>
-        <input type="date" />
-        <button class="button" type="submit" formaction="activities.html">
-          Submit
-        </button>
+        <input type="date" id="date-picker" required />
+        <button class="button" type="submit">Submit</button>
       </div>
     </form>
+
+    <script>
+      function saveDate(event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get the selected date from the date input
+        const selectedDate = document.getElementById("date-picker").value;
+
+        // Save the selected date to localStorage
+        localStorage.setItem("selectedDate", selectedDate);
+
+        // Redirect to the activities page
+        window.location.href = "activities.html";
+      }
+    </script>
   </body>
 </html>
